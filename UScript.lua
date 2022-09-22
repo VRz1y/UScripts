@@ -60,6 +60,15 @@ Section:NewButton("ClickTp", "Give you item 'Click teleport'\n(Doesn't work in a
 
 end)
 
+
+Section:NewButton("GodMode", "GiveYouInfHp", function()
+	while true do wait(0)
+		game.Players.LocalPlayer.Character.Humanoid.MaxHealth = inf ---------------------------------------
+		wait(1)
+		game.Players.LocalPlayer.Character.Humanoid.Health = inf
+	end
+end)
+
 local Tab = Window:NewTab("Other")
 local Section = Tab:NewSection("Other")
 Section:NewButton("ResetCharacter", "KillYou", function()
