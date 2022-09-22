@@ -60,15 +60,6 @@ Section:NewButton("ClickTp", "Give you item 'Click teleport'\n(Doesn't work in a
 
 end)
 
-
-Section:NewButton("GodMode", "GiveYouInfHp", function()
-	while true do wait(0)
-		game.Players.LocalPlayer.Character.Humanoid.MaxHealth = inf ---------------------------------------
-		wait(1)
-		game.Players.LocalPlayer.Character.Humanoid.Health = inf
-	end
-end)
-
 local Tab = Window:NewTab("Other")
 local Section = Tab:NewSection("Other")
 Section:NewButton("ResetCharacter", "KillYou", function()
@@ -77,6 +68,15 @@ end)
 Section:NewButton("ReJoin", "Reconnection", function()
     game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
 end)
+
+Section:NewButton("GodMode", "Give You Inf Heal", function()
+    while true do wait(0)
+    game.Players.LocalPlayer.Character.Humanoid.MaxHealth = inf
+    wait(1)
+    game.Players.LocalPlayer.Character.Humanoid.MaxHealth = inf
+    end
+end)
+
 Section:NewButton("AutoClicker", "ByEzpi", function()
     --// Credits \\--
 --[[ Ezpi#0474 - Creator of this script ]]--
@@ -189,4 +189,3 @@ Section:NewTextBox("YourChatSpam", "WriteYourSpam", function(txt)
 	local A_1 = txt local A_2 = "All" 
     local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) end
 end)
-
